@@ -1,5 +1,12 @@
+import Header from './components/header/Header.tsx';
+
 function App() {
-  return <h1>Async React</h1>;
+  return (
+    <>
+      <Header />
+      <h1>Async Race</h1>
+    </>
+  );
 }
 
 export default App;

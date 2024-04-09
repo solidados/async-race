@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+
+  & .container {
+    display: flex;
+    justify-content: center;
+  }
+  &-button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid white;
+  }
+}
