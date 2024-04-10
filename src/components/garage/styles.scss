@@ -1,0 +1,14 @@
+.garage {
+  &-menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-btn {
+    &-race {
+    }
+    &-reset {
+    }
+    &-generate-cars {
+    }
+  }
+}
