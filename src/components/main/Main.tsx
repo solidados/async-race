@@ -1,12 +1,16 @@
-import Garage from '../garage/Garage.tsx';
+import { useState } from 'react';
 
-const Main = () => (
-  <main>
-    <div className="container">
-      <Garage />
-      {/* <Winners /> */}
-    </div>
-  </main>
-);
+import Garage from '../garage/Garage.tsx';
+import Winners from '../winners/Winners.tsx';
+
+const Main = () => {
+  const [inGarage, _] = useState(true);
+
+  return (
+    <main>
+      <div className="container">{inGarage ? <Garage /> : <Winners />}</div>
+    </main>
+  );
+};
 
 export default Main;
