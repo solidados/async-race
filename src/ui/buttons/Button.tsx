@@ -8,7 +8,9 @@ type ButtonProps = {
 
 const Button: FC<ButtonProps> = (props) => (
   // <button onClick={props.onClick}>{props.text}</button>
-  <button className={props.className}>{props.text}</button>
+  <button className={props.className} style={{ textTransform: 'uppercase' }}>
+    {props.text}
+  </button>
 );
 
 export default Button;
