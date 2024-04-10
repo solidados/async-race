@@ -3,9 +3,11 @@ import './styles.scss';
 
 const Header = () => (
   <header className="header">
-    <div className="container">
-      <Button className={'header-button'} text={'Garage'} />
-      <Button className={'header-button'} text={'Winners'} />
+    <div className="header-container">
+      <nav className="nav">
+        <Button className={'nav-button'} text={'Garage'} />
+        <Button className={'nav-button'} text={'Winners'} />
+      </nav>
     </div>
   </header>
 );
