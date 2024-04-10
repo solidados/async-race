@@ -1,5 +1,6 @@
 import Button from '../../ui/buttons/Button.tsx';
 import CarFeatures from '../CarFeatures/CarFeatures.tsx';
+import CarTrack from '../track/CarTrack.tsx';
 import './styles.scss';
 
 const Garage = () => (
@@ -11,6 +12,7 @@ const Garage = () => (
       <CarFeatures blockName={'update'} />
       <Button className={'garage-btn-generate-cars'} text={'generate cars'} />
     </div>
+    <CarTrack />
   </div>
 );
 
