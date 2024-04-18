@@ -2,6 +2,7 @@
   &-menu {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
   }
   &-btn {
     &-race {
@@ -9,6 +10,25 @@
     &-reset {
     }
     &-generate-cars {
+    }
+  }
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    & h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    & h3 {
+    }
+  }
+  .page {
+    &-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
     }
   }
 }
