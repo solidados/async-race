@@ -8,7 +8,10 @@ type ButtonProps = {
 
 const Button: FC<ButtonProps> = (props) => (
   // <button onClick={props.onClick}>{props.text}</button>
-  <button className={props.className} style={{ textTransform: 'uppercase' }}>
+  <button
+    className={props.className}
+    style={{ padding: '0.5rem 1rem', textTransform: 'uppercase' }}
+  >
     {props.text}
   </button>
 );
