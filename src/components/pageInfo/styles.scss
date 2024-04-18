@@ -1,0 +1,19 @@
+.page {
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    & h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    & h3 {
+    }
+  }
+  &-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+}

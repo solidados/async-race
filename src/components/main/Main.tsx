@@ -1,10 +1,9 @@
-import { useState } from 'react';
-
+import usePageContext from '../../modules/helpers/hooks/usePageContext.tsx';
 import Garage from '../garage/Garage.tsx';
 import Winners from '../winners/Winners.tsx';
 
 const Main = () => {
-  const [inGarage, _] = useState(true);
+  const { inGarage } = usePageContext();
 
   return (
     <main>

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import Button from '../../ui/buttons/Button.tsx';
+import CarOptionInput from '../../ui/inputs/CarOptionInput.tsx';
 import './styles.scss';
 
 type CarFeatureOptions = {
@@ -9,8 +10,8 @@ type CarFeatureOptions = {
 
 const CarFeatures: FC<CarFeatureOptions> = (props) => (
   <div className="car-features">
-    <input type="text" />
-    <input type="color" />
+    <CarOptionInput inputType={'text'} />
+    <CarOptionInput inputType={'color'} />
     <Button
       className={`garage-btn-${props.blockName}`}
       text={`${props.blockName}`}
