@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 type PageContextType = {
-  inGarage: boolean;
+  currentPage: string;
   togglePage: () => void;
 };
 

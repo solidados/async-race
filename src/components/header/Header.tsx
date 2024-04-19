@@ -3,19 +3,19 @@ import Button from '../../ui/buttons/Button.tsx';
 import './styles.scss';
 
 const Header = () => {
-  const { togglePage } = usePageContext();
+  const { currentPage, togglePage } = usePageContext();
 
   return (
     <header className="header">
       <div className="header-container">
         <nav className="nav">
           <Button
-            className={'nav-button'}
+            className={`nav-button ${currentPage === 'Garage' ? 'active' : ''}`}
             onClick={togglePage}
             text={'Garage'}
           />
           <Button
-            className={'nav-button'}
+            className={`nav-button ${currentPage === 'Winners' ? 'active' : ''}`}
             onClick={togglePage}
             text={'Winners'}
           />

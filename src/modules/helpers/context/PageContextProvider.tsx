@@ -7,14 +7,16 @@ type PageContextProviderProps = {
 };
 
 const PageContextProvider: FC<PageContextProviderProps> = ({ children }) => {
-  const [inGarage, setInGarage] = useState(false);
+  const [currentPage, setCurrentPage] = useState('Garage');
 
   const togglePage = () => {
-    setInGarage((prevInGarage) => !prevInGarage);
+    setCurrentPage((prevPage) =>
+      prevPage === 'Garage' ? 'Winners' : 'Garage'
+    );
   };
 
   const value = {
-    inGarage,
+    currentPage,
     togglePage,
   };
 
