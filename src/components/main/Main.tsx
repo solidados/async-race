@@ -3,11 +3,13 @@ import Garage from '../garage/Garage.tsx';
 import Winners from '../winners/Winners.tsx';
 
 const Main = () => {
-  const { inGarage } = usePageContext();
+  const { currentPage } = usePageContext();
 
   return (
     <main>
-      <div className="container">{inGarage ? <Garage /> : <Winners />}</div>
+      <div className="container">
+        {currentPage === 'Garage' ? <Garage /> : <Winners />}
+      </div>
     </main>
   );
 };

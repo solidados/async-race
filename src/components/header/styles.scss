@@ -14,7 +14,13 @@
       border-bottom: none;
       background-color: #e2e2e2;
       font-weight: bold;
+      color: #ffffff;
       cursor: pointer;
+
+      &.active {
+        background-color: #c2c2c2;
+        color: #000000;
+      }
     }
   }
 }
