@@ -1,7 +1,9 @@
 .garage {
+  height: 100vh;
   &-menu {
     display: flex;
     justify-content: space-between;
+    padding-top: 1rem;
     margin-bottom: 1rem;
   }
   &-btn {
