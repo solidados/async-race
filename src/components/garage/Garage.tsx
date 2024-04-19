@@ -6,6 +6,7 @@ import './styles.scss';
 
 const Garage = () => (
   <div className="garage">
+    <PageInfo itemsNumber={1} pageNumber={1} pageTitle={'Garage'} />
     <div className="garage-menu">
       <Button className="garage-btn-race" text={'Race'} />
       <Button className="garage-btn-reset" text={'Reset'} />
@@ -13,7 +14,6 @@ const Garage = () => (
       <CarFeatures blockName={'update'} />
       <Button className={'garage-btn-generate-cars'} text={'generate cars'} />
     </div>
-    <PageInfo itemsNumber={1} pageNumber={1} pageTitle={'Garage'} />
     <CarTrack />
   </div>
 );

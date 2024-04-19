@@ -1,16 +1,20 @@
-.winners-table {
-  width: 100%;
-  border-collapse: collapse;
+.winners {
+  height: 100vh;
 
-  & th {
-    padding: 0.5rem 0;
-    border-radius: 0.5rem;
-    background-color: rgba(119, 129, 155, 0.63);
-    font-size: 0.9rem;
-    color: #ffffff;
-  }
+  &-table {
+    width: 100%;
+    border-collapse: collapse;
 
-  & th:nth-child(3) {
-    width: 30%;
+    & th {
+      padding: 0.5rem 0;
+      border-radius: 0.5rem;
+      background-color: rgba(119, 129, 155, 0.63);
+      font-size: 0.9rem;
+      color: #ffffff;
+    }
+
+    & th:nth-child(3) {
+      width: 30%;
+    }
   }
 }

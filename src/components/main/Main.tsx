@@ -1,6 +1,7 @@
 import usePageContext from '../../modules/helpers/hooks/usePageContext.tsx';
 import Garage from '../garage/Garage.tsx';
 import Winners from '../winners/Winners.tsx';
+import './style.scss';
 
 const Main = () => {
   const { inGarage } = usePageContext();

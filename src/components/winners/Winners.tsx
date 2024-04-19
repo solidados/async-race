@@ -2,7 +2,7 @@ import PageInfo from '../pageInfo/PageInfo.tsx';
 import './styles.scss';
 
 const Winners = () => (
-  <>
+  <div className="winners">
     <PageInfo itemsNumber={1} pageNumber={1} pageTitle={'Winners'} />
     <table className="winners-table">
       <thead>
@@ -14,9 +14,8 @@ const Winners = () => (
           <th>Best time (seconds)</th>
         </tr>
       </thead>
-      {/* Далее будут добавлены строки таблицы */}
     </table>
-  </>
+  </div>
 );
 
 export default Winners;
