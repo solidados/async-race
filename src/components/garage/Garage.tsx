@@ -1,12 +1,34 @@
 import { useContext, useEffect, useMemo } from 'react';
+import { toast } from 'react-toastify';
 
-import fetchGarageItems from '../../modules/helpers/api/fetchGarageItems';
+import fetchGarageItems, {
+  GarageItem,
+} from '../../modules/helpers/api/fetchGarageItems';
 import PageContext from '../../modules/helpers/context/PageContext.tsx';
 import Button from '../../ui/buttons/Button.tsx';
 import CarFeatures from '../CarFeatures/CarFeatures.tsx';
 import PageInfo from '../pageInfo/PageInfo.tsx';
 import CarTrack from '../track/CarTrack.tsx';
 import './styles.scss';
+
+const handleFetchError = (error: unknown): void => {
+  if (error instanceof Error) {
+    toast.error(error.message);
+  } else {
+    toast.error('An unexpected error occurred');
+  }
+};
+
+const fetchItems = async (
+  setGarageItems: (items: GarageItem[]) => void
+): Promise<void> => {
+  try {
+    const items = await fetchGarageItems();
+    setGarageItems(items);
+  } catch (error: unknown) {
+    handleFetchError(error);
+  }
+};
 
 const Garage = () => {
   const { garageItems, setGarageItems } = useContext(PageContext);
@@ -15,16 +37,9 @@ const Garage = () => {
     [setGarageItems]
   );
   useEffect((): void => {
-    const fetchItems = async (): Promise<void> => {
-      try {
-        const items = await fetchGarageItems();
-        if (setGarageItems) setGarageItems(items);
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
-    fetchItems().catch((error) => console.error(error.message));
+    fetchItems(setGarageItemsCallback);
   }, [setGarageItems, setGarageItemsCallback]);
+
   return (
     <div className="garage">
       <PageInfo
