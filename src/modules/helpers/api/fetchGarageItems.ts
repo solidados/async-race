@@ -1,21 +1,21 @@
+import handleError from '../errors/handleError';
+
 export type GarageItem = {
   color: string;
   id: number;
   name: string;
 };
 
-const fetchGarageItems = async (): Promise<GarageItem[]> => {
+const fetchGarageItems = async () => {
+  let data: GarageItem[];
   try {
     const response: Response = await fetch('http://localhost:3000/garage');
-    if (!response.ok) {
-      throw new Error('Failed to fetch garage items');
-    }
-    const data = await response.json();
-    return data as GarageItem[];
+    data = await response.json();
   } catch (error) {
-    console.error('Error fetching garage items:', error);
-    throw error;
+    handleError(`${error}: 'Failed to fetch garage items'`);
+    return [];
   }
+  return data;
 };
 
 export default fetchGarageItems;

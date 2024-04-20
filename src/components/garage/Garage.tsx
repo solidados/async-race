@@ -1,23 +1,15 @@
 import { useContext, useEffect, useMemo } from 'react';
-import { toast } from 'react-toastify';
 
 import fetchGarageItems, {
   GarageItem,
 } from '../../modules/helpers/api/fetchGarageItems';
 import PageContext from '../../modules/helpers/context/PageContext.tsx';
+import handleError from '../../modules/helpers/errors/handleError';
 import Button from '../../ui/buttons/Button.tsx';
 import CarFeatures from '../CarFeatures/CarFeatures.tsx';
 import PageInfo from '../pageInfo/PageInfo.tsx';
 import CarTrack from '../track/CarTrack.tsx';
 import './styles.scss';
-
-const handleFetchError = (error: unknown): void => {
-  if (error instanceof Error) {
-    toast.error(error.message);
-  } else {
-    toast.error('An unexpected error occurred');
-  }
-};
 
 const fetchItems = async (
   setGarageItems: (items: GarageItem[]) => void
@@ -26,7 +18,7 @@ const fetchItems = async (
     const items = await fetchGarageItems();
     setGarageItems(items);
   } catch (error: unknown) {
-    handleFetchError(error);
+    handleError(error);
   }
 };
 
