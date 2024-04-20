@@ -1,11 +1,16 @@
+import { GarageItem } from '../../modules/helpers/api/fetchGarageItems';
 import Car from '../../ui/car/Car.tsx';
-import CarControlPannel from './CarControlPannel.tsx';
+import CarControlPanel from './CarControlPanel.tsx';
 import './styles.scss';
 
-const CarTrack = () => (
+type CarTrackProps = {
+  item: GarageItem;
+};
+
+const CarTrack = ({ item }: CarTrackProps) => (
   <div className="track">
-    <CarControlPannel />
-    <Car />
+    <CarControlPanel carName={item.name} />
+    <Car item={item} />
     <div className="track-racing"></div>
     <div className="track-finish"></div>
   </div>
