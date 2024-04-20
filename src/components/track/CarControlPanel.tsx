@@ -1,9 +1,14 @@
+import { FC } from 'react';
+
 import CarControls from './CarControls.tsx';
 import CarTrackControls from './CarTrackControls.tsx';
 
-const CarControlPannel = () => (
+type CarControlPanelProps = {
+  carName: string;
+};
+const CarControlPanel: FC<CarControlPanelProps> = ({ carName }) => (
   <div className="car-control-wrapper">
-    <p>Mercedes GQL-500</p>
+    <p>{carName}</p>
     <div className="car-control-pannel">
       <CarTrackControls />
       <CarControls />
@@ -11,4 +16,4 @@ const CarControlPannel = () => (
   </div>
 );
 
-export default CarControlPannel;
+export default CarControlPanel;

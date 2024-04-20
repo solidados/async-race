@@ -1,5 +1,6 @@
 import { FC, ReactNode, useState } from 'react';
 
+import { GarageItem } from '../api/fetchGarageItems';
 import PageContext from './PageContext.tsx';
 
 type PageContextProviderProps = {
@@ -8,15 +9,18 @@ type PageContextProviderProps = {
 
 const PageContextProvider: FC<PageContextProviderProps> = ({ children }) => {
   const [currentPage, setCurrentPage] = useState('Garage');
+  const [garageItems, setGarageItems] = useState<GarageItem[]>();
 
-  const togglePage = () => {
-    setCurrentPage((prevPage) =>
+  const togglePage = (): void => {
+    setCurrentPage((prevPage: string): string =>
       prevPage === 'Garage' ? 'Winners' : 'Garage'
     );
   };
 
   const value = {
     currentPage,
+    garageItems,
+    setGarageItems,
     togglePage,
   };
 
