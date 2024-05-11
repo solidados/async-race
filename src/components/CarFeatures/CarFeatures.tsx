@@ -10,8 +10,8 @@ type CarFeatureOptions = {
 
 const CarFeatures: FC<CarFeatureOptions> = (props) => (
   <div className="car-features">
-    <CarOptionInput inputType={'text'} />
-    <CarOptionInput inputType={'color'} />
+    <CarOptionInput inputType={'text'} value={''} />
+    <CarOptionInput inputType={'color'} value={''} />
     <Button
       className={`garage-btn-${props.blockName}`}
       text={`${props.blockName}`}

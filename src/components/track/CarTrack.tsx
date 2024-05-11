@@ -9,7 +9,7 @@ type CarTrackProps = {
 
 const CarTrack = ({ item }: CarTrackProps) => (
   <div className="track">
-    <CarControlPanel carName={item.name} />
+    <CarControlPanel item={item} />
     <Car item={item} />
     <div className="track-racing"></div>
     <div className="track-finish"></div>
